@@ -1,0 +1,170 @@
+*{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#topo{
+    position: fixed;
+    display: flex;
+    background: #F9D423;
+    box-shadow: #aaa 1px 1px 3px;
+}
+#principal{
+    background: linear-gradient(#FC913A, #EDE574);
+}
+#principal-dash{
+    background: linear-gradient(#FC913A, #EDE574);
+}
+.login{
+    background: #E1F5C4;
+}
+.menu-item:hover{
+    border-radius: 5px;
+    transform: scale(1.1);
+    transition-property: background scale;
+    transition-duration: 1s;
+    transition-delay: .1s;
+    background: #FF4E50;
+}
+.menu-bg{
+    padding: 1%; margin: 1% auto 1% auto;
+    background: #E1F5C4;
+    box-shadow: #aaa 1px 1px 3px;
+}
+.menu-body{
+    background: #F9D423;
+    margin: 1%;
+    border-radius: 5px;
+    box-shadow: #aaa 1px 1px 3px;
+}
+.menu-body:hover{
+    border-radius: 5px;
+    transform: scale(1.1);
+    transition-property: background scale;
+    transition-duration: 1s;
+    transition-delay: .1s;
+    background: #FF4E50;
+}
+.usuario{
+    background: #E1F5C4;
+    box-shadow: #aaa 1px 1px 3px;
+}
+.conteudo{
+    display: flex; flex-direction: row; flex-wrap: wrap;
+    background: #E1F5C4;
+    box-shadow: #aaa 1px 1px 3px;
+}
+#rodape{
+    color: whitesmoke; background: #FF4E50;
+    text-align: center; font-weight: bold;
+}
+
+/* Dispositivos extra small (telefones em modo retrato, com menos de 576px) */
+@media (max-width: 575.98px) { 
+    *{
+        font-size: .9rem;
+    }
+    #principal{
+        width: 100%; height: 100vh;
+    }
+    .login{
+        width: 90vw; height: 65%;
+        padding: 20%; margin: 0 auto 0 auto 0;
+    }
+    .logo{
+        width: 250px;
+    }
+    #rodape{
+        display: none;
+    }
+ }
+
+/* Dispositivos small (telefones em modo paisagem, com 576px ou mais) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    *{
+        font-size: .9rem;
+    }
+    #principal{
+        width: 100%; height: 80vh;
+        padding-top: 1%;
+        padding-bottom: 2%;
+    }
+    .login{
+        width: 60vw; height: 85%;
+        padding: 10%; margin: 0 auto 0 auto 0;
+    }
+    .logo{
+        width: 250px;
+    }
+    #rodape{
+        width: 100%; height: 22vh;
+        padding: 7%;
+    }
+ }
+
+/* Dispositivos médios (tablets com 768px ou mais) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    *{
+        font-size: 1rem;
+    }
+    #principal{
+        width: 100%; height: 85vh;
+        padding-top: 2%;
+        padding-bottom: 7%;
+    }
+    .login{
+        width: 40%; height: auto;
+        padding: 5%; margin: 0 auto 0 auto 0;
+    }
+    .logo{
+        width: 250px;
+    }
+    #rodape{
+        width: 100%; height: 30%;
+        padding: 7%;
+    }
+ }
+
+/* Dispositivos large (desktops com 992px ou mais) */
+@media (min-width: 992px) and (max-width: 1920px) {
+    *{
+        font-size: 1rem;
+    }
+    #topo{
+        width: 5%; height: 100%;
+        flex-direction: column; justify-content: center;
+    }
+    #principal{
+        width: 100%; height: 100%;
+        padding-top: 2%;
+        padding-bottom: 5%;
+    }
+    #principal-dash{
+        width: 96%; height: 100%;
+        margin-left: 4%;
+        padding: 5%;
+    }
+    .icone{
+        width: 50px;
+    }
+    .login{
+        width: 25%; height: auto;
+        padding: 4%; margin: 0 auto 0 auto 0;
+    }
+    .usuario{
+        width: 15%;
+        padding: 1%;
+    }
+    .conteudo{
+        width: 100%; height: auto;
+        padding: 2%; margin: 1% auto 1% auto;
+    }
+    .menu-bg{
+        width: 28vw;
+    }
+    .logo{
+        width: 250px;
+    }
+    #rodape{
+        width: 100%; height: auto;
+        padding: 5%;
+    }
+ }
