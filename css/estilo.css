@@ -1,17 +1,14 @@
 *{
     font-family: 'Roboto Condensed', sans-serif;
 }
+body{
+    background: linear-gradient(#FC913A, #EDE574);
+}
 #topo{
     position: fixed;
     display: flex;
     background: #F9D423;
     box-shadow: #aaa 1px 1px 3px;
-}
-#principal{
-    background: linear-gradient(#FC913A, #EDE574);
-}
-#principal-dash{
-    background: linear-gradient(#FC913A, #EDE574);
 }
 .login{
     background: #E1F5C4;
@@ -29,13 +26,29 @@
     background: #E1F5C4;
     box-shadow: #aaa 1px 1px 3px;
 }
-.menu-body{
+.conteudo-principal{
+    display: flex; flex-direction: row; flex-wrap: wrap;
+    background: #E1F5C4;
+    box-shadow: #aaa 1px 1px 3px;
+}
+.card-corpo{
     background: #F9D423;
     margin: 1%;
     border-radius: 5px;
     box-shadow: #aaa 1px 1px 3px;
 }
-.menu-body:hover{
+.titulo-card{
+    color: #FF4E50;
+    font-weight: bold;
+    text-shadow: #333 .5px .5px 1px;
+}
+.card-btn{
+    background: #FC913A;
+    margin: 1%;
+    border-radius: 5px;
+    box-shadow: #aaa 1px 1px 3px;
+}
+.card-btn:hover{
     border-radius: 5px;
     transform: scale(1.1);
     transition-property: background scale;
@@ -44,11 +57,6 @@
     background: #FF4E50;
 }
 .usuario{
-    background: #E1F5C4;
-    box-shadow: #aaa 1px 1px 3px;
-}
-.conteudo{
-    display: flex; flex-direction: row; flex-wrap: wrap;
     background: #E1F5C4;
     box-shadow: #aaa 1px 1px 3px;
 }
@@ -150,15 +158,19 @@
         padding: 4%; margin: 0 auto 0 auto 0;
     }
     .usuario{
-        width: 15%;
+        width: 10%;
         padding: 1%;
     }
-    .conteudo{
+    .conteudo-principal{
         width: 100%; height: auto;
-        padding: 2%; margin: 1% auto 1% auto;
+        margin: 1% auto 1% auto;
+        padding: 2%;
     }
-    .menu-bg{
-        width: 28vw;
+    .card-corpo{
+        width: 520px; height: auto;
+    }
+    .card-imagem{
+        width: 520px;
     }
     .logo{
         width: 250px;
