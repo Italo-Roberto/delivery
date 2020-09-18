@@ -1,4 +1,4 @@
-<ul class="nav flex-column">
+<ul class="nav d-flex">
   <li class="nav-item menu-item">
     <a class="nav-link" href="./dashboard.php"><img src="../img/dashboard.svg" alt="Dashboard" title="Dashboard" class="icone"></a>
   </li>

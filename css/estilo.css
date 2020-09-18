@@ -7,6 +7,7 @@ body{
 #topo{
     position: fixed;
     display: flex;
+    z-index: 1030;
     background: #F9D423;
     box-shadow: #999 1px 1px 3px;
 }
@@ -78,6 +79,23 @@ body{
     *{
         font-size: .9rem;
     }
+    #topo{
+        width: 100%; height: 10%;
+        margin-top: -7%;
+        flex-direction: row; justify-content: center;
+        flex-wrap: nowrap;
+    }
+    #principal{
+        width: 100%; height: 95%;
+        margin-top: 5%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    #principal-dash{
+        width: 100%; height: 95%;
+        margin-top: 7%;
+        padding: 5%;
+    }
     #principal{
         width: 100%; height: 100vh;
     }
@@ -85,8 +103,30 @@ body{
         width: 90vw; height: 65%;
         padding: 20%; margin: 0 auto 0 auto 0;
     }
+    .usuario{
+        width: 16vw; height: 2%;
+        margin-left: 1%;
+        padding: 1%;
+    }
+    .card-corpo{
+        width: 350px; height: auto;
+        margin: 2%; padding: 2%;
+    }
+    .card-form{
+        width: 350px; height: auto;
+        margin: 2%; padding: 2%;
+    }
+    .card-imagem{
+        width: 350px;
+    }
+    .icone{
+        width: 35px;
+    }
     .logo{
-        width: 250px;
+        width: 200px;
+    }
+    .logo2{
+        width: 20px;
     }
     #rodape{
         display: none;
@@ -98,17 +138,48 @@ body{
     *{
         font-size: .9rem;
     }
+    #topo{
+        width: 100%; height: 10%;
+        margin-top: -5%;
+        flex-direction: row; justify-content: center; justify-items: center;
+    }
     #principal{
         width: 100%; height: 80vh;
-        padding-top: 1%;
         padding-bottom: 2%;
+    }
+    #principal-dash{
+        width: 100%; height: 95%;
+        margin-top: 5%;
+        padding: 5%;
     }
     .login{
         width: 60vw; height: 85%;
         padding: 10%; margin: 0 auto 0 auto 0;
     }
+    .usuario{
+        width: 15vw; height: 2%;
+        margin-left: -7vw;
+        padding: 1%;
+    }
+    .icone{
+        width: 40px;
+    }
+    .card-corpo{
+        width: 500px; height: auto;
+        margin: 2%; padding: 2%;
+    }
+    .card-form{
+        width: 350px; height: auto;
+        margin: 2%; padding: 2%;
+    }
+    .card-imagem{
+        width: 500px;
+    }
     .logo{
-        width: 250px;
+        width: 220px;
+    }
+    .logo2{
+        width: 20px;
     }
     #rodape{
         width: 100%; height: 22vh;
@@ -121,31 +192,8 @@ body{
     *{
         font-size: 1rem;
     }
-    #principal{
-        width: 100%; height: 85vh;
-        padding-top: 2%;
-        padding-bottom: 7%;
-    }
-    .login{
-        width: 40%; height: auto;
-        padding: 5%; margin: 0 auto 0 auto 0;
-    }
-    .logo{
-        width: 250px;
-    }
-    #rodape{
-        width: 100%; height: 30%;
-        padding: 7%;
-    }
- }
-
-/* Dispositivos large (desktops com 992px ou mais) */
-@media (min-width: 992px) and (max-width: 1920px) {
-    *{
-        font-size: 1rem;
-    }
     #topo{
-        width: 5%; height: 100%;
+        width: 8%; height: 100%;
         flex-direction: column; justify-content: center;
     }
     #principal{
@@ -155,6 +203,67 @@ body{
     }
     #principal-dash{
         width: 96%; height: 100%;
+        margin-left: 7%;
+        padding: 5%;
+    }
+    .login{
+        width: 40%; height: auto;
+        padding: 5%; margin: 0 auto 0 auto 0;
+    }
+    .logo{
+        width: 220px;
+    }
+    .usuario{
+        width: 12vw; height: 2%;
+        margin-left: 2vw;
+        padding: 1%;
+    }
+    .conteudo-principal{
+        width: 100%; height: auto;
+        margin: 1% auto 1% auto;
+        padding: 2%;
+    }
+    .card-corpo{
+        width: 600px; height: auto;
+        margin: 2%; padding: 2%;
+    }
+    .card-form{
+        width: 450px; height: auto;
+    }
+    .card-imagem{
+        width: 600px;
+    }
+    .icone{
+        width: 45px;
+    }
+    .logo{
+        width: 250px;
+    }
+    .logo2{
+        width: 20px;
+    }
+    #rodape{
+        width: 100%; height: 30%;
+        padding: 7%; margin-left: 7%;
+    }
+ }
+
+/* Dispositivos large (desktops com 992px ou mais) */
+@media (min-width: 992px) and (max-width: 1920px) {
+    *{
+        font-size: 1rem;
+    }
+    #topo{
+        width: 5.5%; height: 100%;
+        flex-direction: column; justify-content: center;
+    }
+    #principal{
+        width: 100%; height: 100%;
+        padding-top: 2%;
+        padding-bottom: 5%;
+    }
+    #principal-dash{
+        width: 95%; height: 100%;
         margin-left: 4%;
         padding: 5%;
     }
@@ -167,7 +276,7 @@ body{
     }
     .usuario{
         width: 12vw; height: 2%;
-        margin-left: -7vw;
+        margin-left: -5vw;
         padding: 1%;
     }
     .conteudo-principal{
@@ -177,13 +286,13 @@ body{
     }
     .card-corpo{
         width: 600px; height: auto;
-        margin: 2%;
+        margin: 2%; padding: 2%;
     }
     .card-form{
         width: 450px; height: auto;
     }
     .card-imagem{
-        width: 600px;
+        width: 550px;
     }
     .logo{
         width: 250px;
