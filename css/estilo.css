@@ -8,7 +8,7 @@ body{
     position: fixed;
     display: flex;
     background: #F9D423;
-    box-shadow: #aaa 1px 1px 3px;
+    box-shadow: #999 1px 1px 3px;
 }
 .login{
     background: #E1F5C4;
@@ -32,28 +32,36 @@ body{
     box-shadow: #aaa 1px 1px 3px;
 }
 .card-corpo{
+    display: flex; flex-direction: column;
     background: #F9D423;
-    margin: 1%;
+    border: #EDE574 solid 1px;
     border-radius: 5px;
-    box-shadow: #aaa 1px 1px 3px;
+    box-shadow: #aaa 1px 1px 4px;
+}
+.card-form{
+    display: flex; flex-direction: column;
+    background: #F9D423;
+    border: #EDE574 solid 1px;
+    border-radius: 5px;
+    box-shadow: #aaa 1px 1px 4px;
 }
 .titulo-card{
     color: #FF4E50;
     font-weight: bold;
-    text-shadow: #333 .5px .5px 1px;
+    text-shadow: #333 .3px .5px .7px;
 }
 .card-btn{
     background: #FC913A;
     margin: 1%;
     border-radius: 5px;
-    box-shadow: #aaa 1px 1px 3px;
+    box-shadow: #777 .7px 1px 2.5px;
 }
 .card-btn:hover{
+    color: aliceblue;
     border-radius: 5px;
-    transform: scale(1.1);
-    transition-property: background scale;
-    transition-duration: 1s;
-    transition-delay: .1s;
+    transition-property: background color;
+    transition-duration: .5s;
+    transition-delay: .05s;
     background: #FF4E50;
 }
 .usuario{
@@ -158,7 +166,8 @@ body{
         padding: 4%; margin: 0 auto 0 auto 0;
     }
     .usuario{
-        width: 10%;
+        width: 12vw; height: 2%;
+        margin-left: -7vw;
         padding: 1%;
     }
     .conteudo-principal{
@@ -167,13 +176,20 @@ body{
         padding: 2%;
     }
     .card-corpo{
-        width: 520px; height: auto;
+        width: 600px; height: auto;
+        margin: 2%;
+    }
+    .card-form{
+        width: 450px; height: auto;
     }
     .card-imagem{
-        width: 520px;
+        width: 600px;
     }
     .logo{
         width: 250px;
+    }
+    .logo2{
+        width: 20px;
     }
     #rodape{
         width: 100%; height: auto;

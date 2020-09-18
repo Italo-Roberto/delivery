@@ -18,8 +18,11 @@ include('../verifica_login.php');
         <? include('../menu.php') ?>
     </header>
     <main id="principal-dash">
-        <div class="usuario">
-            <? echo 'Bem vindo: '. $_SESSION['usuario'];?>
+        <div class="container d-flex flex-row justify-content-start align-items-center">
+            <div class="usuario">
+                <? echo 'Bem vindo: '. $_SESSION['usuario'];?>
+            </div>
+            <img src="../img/logo_edit.png" class="w-25 mx-auto" alt="Logo">
         </div>
         <section class="conteudo-principal">
             <div class="card card-corpo">
@@ -35,7 +38,7 @@ include('../verifica_login.php');
                 <div class="card-body">
                     <h4 class="card-title titulo-card">Pratos Mais Pedidos</h4>
                     <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                    <a href="pedidos.php" class="btn card-btn">Ver todos os pratos</a>
+                    <a href="pratos.php" class="btn card-btn">Ver todos os pratos</a>
                 </div>
             </div>
             <div class="card card-corpo">
@@ -43,7 +46,7 @@ include('../verifica_login.php');
                 <div class="card-body">
                     <h4 class="card-title titulo-card">Vendas do dia</h4>
                     <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                    <a href="pedidos.php" class="btn card-btn">Ver todas as vendas</a>
+                    <a href="financeiro.php" class="btn card-btn">Ver todas as vendas</a>
                 </div>
             </div>
         </section>
