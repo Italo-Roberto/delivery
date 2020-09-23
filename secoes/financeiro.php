@@ -35,26 +35,47 @@ $resultado_consulta = mysqli_query($conexao, $consulta);
                 <div class="d-flex flex-column p-3 mx-5 shadow-sm rounded" style="background: #F9D423;border: #EDE574 solid 1px;">
                     <img src="../img/despesas.svg" class="icone" alt="Despeas">
                     <h5>Despesas</h5>
+                    <?php 
+                    $consulta1 = mysqli_query($conexao, "SELECT sum(valor) as total FROM pedidos WHERE valor");
+                    while($total_rec = mysqli_fetch_array($consulta1)){
+                        setlocale(LC_MONETARY, 'pt_BR'); echo money_format('%.2n', $total_rec['total']) . "\n". '<br>';
+                    }
+                    ?>
                 </div>
                 <div class="d-flex flex-column p-3 mx-5 shadow-sm rounded" style="background: #F9D423;border: #EDE574 solid 1px;">
                     <img src="../img/areceber.svg" class="icone" alt="Despeas">
                     <h5>A receber</h5>
+                    <?php 
+                    $consulta1 = mysqli_query($conexao, "SELECT sum(valor) as total FROM pedidos WHERE valor");
+                    while($total_rec = mysqli_fetch_array($consulta1)){
+                        setlocale(LC_MONETARY, 'pt_BR'); echo money_format('%.2n', $total_rec['total']) . "\n". '<br>';
+                    }
+                    ?>
                 </div>
                 <div class="d-flex flex-column p-3 mx-5 shadow-sm rounded" style="background: #F9D423;border: #EDE574 solid 1px;">
                     <img src="../img/receitas.svg" class="icone" alt="Despeas">
                     <h5>Receitas</h5>
+                    <?php 
+                    $consulta1 = mysqli_query($conexao, "SELECT sum(valor) as total FROM pedidos WHERE valor");
+                    while($total_rec = mysqli_fetch_array($consulta1)){
+                        setlocale(LC_MONETARY, 'pt_BR'); echo money_format('%.2n', $total_rec['total']) . "\n". '<br>';
+                    }
+                    ?>
                 </div>
             </div>
 
-            <div class="card-corpo">
-                <h4 class="titulo-card">Despesas do dia</h4>
-            </div>
-            <div class="card-corpo">
-                <h4 class="titulo-card">A receber até agora</h4>
-            </div>
-            <div class="card-corpo">
-                <h4 class="titulo-card">Receitas do dia</h4>
-            </div>
+            <article class="d-flex flex-row flex-wrap">
+                <div class="card-corpo">
+                    <h4 class="titulo-card">Despesas</h4>
+                </div>
+                <div class="card-corpo">
+                    <h4 class="titulo-card">Recebimentos do dia</h4>
+                </div>
+                <div class="card-corpo">
+                    <h4 class="titulo-card">Recebimento Total</h4>
+                </div>
+            </article>
+            
 
         </section>
     </main>

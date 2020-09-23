@@ -1,5 +1,9 @@
 <?php
 include('../verifica_login.php');
+include('../conexao.php');
+
+$consulta = "SELECT * FROM pedidos ORDER by id DESC";
+$resultado_consulta = mysqli_query($conexao, $consulta);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,7 +40,7 @@ include('../verifica_login.php');
                             <th>Valor</th>
                         </thead>
                         <tbody style="background: #E1F5C4;">
-                            <?php while ($linhas = mysqli_fetch_assoc($resultado_consulta)) { ?>
+                            <?php while ($linhas = mysqli_fetch_array($resultado_consulta)) { ?>
                                 <tr>
                                     <td><? echo $linhas['nome']; ?></td>
                                     <td><? echo $linhas['prato[], quantidade[]']; ?></td>
@@ -49,34 +53,57 @@ include('../verifica_login.php');
                 </div>
             </div>
             <div class="card card-form">
-            <form action="" id="formDados" class="d-flex flex-row p-3" method="post">
-                <article>
-                    <h4 class="card-title titulo-card">Novo Pedido</h4>
-                    <div id="formulario" class="form-group">
-                        <label>Prato:
-                            <input type="text" name="prato[]" placeholder="Hamburguer, pizza ...">
-                        </label> <button type="buttom" id="add" class="btn card-btn">+</button>
-                        <label>Quantidade:
-                            <input type="number" class="w-25" name="quantidade[]">
-                        </label>
+                <form action="" id="formDados" class="d-flex flex-row p-3" method="post">
+                    <article>
+                        <h4 class="card-title titulo-card">Novo Pedido</h4>
+                        <div id="formulario" class="form-group">
+                            <label>Prato:
+                                <input type="list" list="pratos" name="prato[]" placeholder="Hamburguer, pizza ...">
+                                <datalist id="pratos">
+                                    <?php $consulta_pratos = "SELECT prato FROM pratos ORDER by id DESC"; 
+                                    $resultado_pratos = mysqli_query($conexao, $consulta_pratos);
+
+                                    while($linha_pratos = mysqli_fetch_array($resultado_pratos)){ ?>
+                                        <option value="<? echo $linha_pratos['prato'] ?>"></option>
+                                    <?php } ?> 
+                                </datalist>
+                            </label> <button type="buttom" id="add" class="btn card-btn">+</button>
+                            <label>Quantidade:
+                                <input type="number" class="w-25" name="quantidade[]">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Cliente: </label>
+                            <input type="list" list="clientes" name="cliente" placeholder="Fulano, cicrano ...">
+                            <datalist id="clientes">
+                                    <?php $consulta_clientes = "SELECT nome FROM clientes ORDER by id DESC"; 
+                                    $resultado_clientes = mysqli_query($conexao, $consulta_clientes);
+
+                                    while($linha_clientes = mysqli_fetch_array($resultado_clientes)){ ?>
+                                        <option value="<? echo $linha_clientes['nome'] ?>"></option>
+                                    <?php } ?>
+                            </datalist>
+                        </div>
+                        <div class="form-group">
+                            <label>Observações: </label><br>
+                            <textarea name="obs" cols="30" rows="10" placeholder="Detalhes do pedido, ponto de referência do endereço, guardanapo extra, etc."></textarea>
+                        </div>
+                    </article>
+
+                    <div>
+                        <div class="form-group">
+                            <label>Valor: </label>
+                            <input type="text" class="w-50" name="valor" placeholder="R$0,00" value="<? $linhas['valor']?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Entrega: </label>
+                            <input type="text" class="w-50" name="entrega" placeholder="R$0,00" value="5.00">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn card-btn" value="Fechar pedido">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Cliente: </label>
-                        <input type="text" name="cliente" placeholder="Fulano, cicrano ...">
-                    </div>
-                    <div class="form-group">
-                        <label>Observações: </label><br>
-                        <textarea name="obs" cols="30" rows="10" placeholder="Ponto de referência, sem verduras, guardanapo adicional, etc."></textarea>
-                    </div>
-                </article>
-                <div>
-                    <p>Valor: R$0,00</p>
-                    <p>Entrega: R$0,00</p>
-                    <div class="form-group">
-                        <input type="submit" class="btn card-btn" value="Fazer pedido">
-                    </div>
-                </div>
-            </form>
+                </form>
             </div>
             
         </section>
