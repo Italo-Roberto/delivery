@@ -17,14 +17,14 @@ if ($resultado_consulta) {
     echo "
             <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/delivery/secoes/clientes.php'>
             <script type=\"text/javascript\">
-                alert(\"Cliente cadastrado com Sucesso.\");
+                alert(\"Pedido cadastrado com Sucesso.\");
             </script>
         ";
 } else{
     echo "
             <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/delivery/secoes/clientes.php'>
             <script type=\"text/javascript\">
-                alert(\"Cliente não cadastrado! Verifique se faltou algum campo.\");
+                alert(\"Pedido não cadastrado! Verifique se faltou algum campo.\");
             </script>
         ";
 }

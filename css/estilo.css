@@ -34,14 +34,14 @@ body{
 }
 .card-corpo{
     display: flex; flex-direction: column;
-    background: #F9D423;
+    background: linear-gradient(#F9D423, #EDE574);
     border: #EDE574 solid 1px;
     border-radius: 5px;
     box-shadow: #aaa 1px 1px 4px;
 }
 .card-form{
     display: flex; flex-direction: column;
-    background: #F9D423;
+    background: linear-gradient(#F9D423, #EDE574);
     border: #EDE574 solid 1px;
     border-radius: 5px;
     box-shadow: #aaa 1px 1px 4px;

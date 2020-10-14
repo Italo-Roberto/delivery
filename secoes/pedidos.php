@@ -53,8 +53,8 @@ $resultado_consulta = mysqli_query($conexao, $consulta);
                 </div>
             </div>
             <div class="card card-form">
-                <form action="" id="formDados" class="d-flex flex-row p-3" method="post">
-                    <article>
+                <form action="cadastrar-pedido.php" id="formDados" class="d-flex flex-row p-3" method="post">
+                    <div>
                         <h4 class="card-title titulo-card">Novo Pedido</h4>
                         <div id="formulario" class="form-group">
                             <label>Prato:
@@ -67,7 +67,8 @@ $resultado_consulta = mysqli_query($conexao, $consulta);
                                         <option value="<? echo $linha_pratos['prato'] ?>"></option>
                                     <?php } ?> 
                                 </datalist>
-                            </label> <button type="buttom" id="add" class="btn card-btn">+</button>
+                            </label> <input type="button" id="add" class="btn card-btn" value="+">
+                            
                             <label>Quantidade:
                                 <input type="number" class="w-25" name="quantidade[]">
                             </label>
@@ -76,28 +77,27 @@ $resultado_consulta = mysqli_query($conexao, $consulta);
                             <label>Cliente: </label>
                             <input type="list" list="clientes" name="cliente" placeholder="Fulano, cicrano ...">
                             <datalist id="clientes">
-                                    <?php $consulta_clientes = "SELECT nome FROM clientes ORDER by id DESC"; 
-                                    $resultado_clientes = mysqli_query($conexao, $consulta_clientes);
+                                <?php $consulta_clientes = "SELECT nome FROM clientes ORDER by id DESC"; 
+                                $resultado_clientes = mysqli_query($conexao, $consulta_clientes);
 
-                                    while($linha_clientes = mysqli_fetch_array($resultado_clientes)){ ?>
-                                        <option value="<? echo $linha_clientes['nome'] ?>"></option>
-                                    <?php } ?>
+                                while($linha_clientes = mysqli_fetch_array($resultado_clientes)){ ?>
+                                    <option value="<? echo $linha_clientes['nome'] ?>"></option>
+                                <?php } ?>
                             </datalist>
                         </div>
                         <div class="form-group">
                             <label>Observações: </label><br>
                             <textarea name="obs" cols="30" rows="10" placeholder="Detalhes do pedido, ponto de referência do endereço, guardanapo extra, etc."></textarea>
                         </div>
-                    </article>
-
+                    </div>
                     <div>
                         <div class="form-group">
                             <label>Valor: </label>
-                            <input type="text" class="w-50" name="valor" placeholder="R$0,00" value="<? $linhas['valor']?>">
+                            <input type="text" class="w-50" name="valor" placeholder="R$0,00">
                         </div>
                         <div class="form-group">
                             <label>Entrega: </label>
-                            <input type="text" class="w-50" name="entrega" placeholder="R$0,00" value="5.00">
+                            <input type="text" class="w-50" name="entrega" placeholder="R$0,00">
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn card-btn" value="Fechar pedido">
@@ -117,14 +117,9 @@ $resultado_consulta = mysqli_query($conexao, $consulta);
 
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            /*desabilita o submit do form*/
-            $("#formDados").submit(function() {
-                return false;
-            });
-        });
+       
         //https://api.jquery.com/click/
         $("#add").click(function() {
             //https://api.jquery.com/append/
